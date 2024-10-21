@@ -3,7 +3,7 @@
 
 #include "glm/glm.hpp"
 #include "ShaderProgram.h"
-enum EntityType { PLAYER, GOAL_PLATFORM, TRAP_PLATFORM, MESSAGE};
+enum EntityType { PLAYER, WIN_PLATFORM, TRAP_PLATFORM, MESSAGE};
 
 
 enum AnimationDirection { LEFT, RIGHT, UP, DOWN };

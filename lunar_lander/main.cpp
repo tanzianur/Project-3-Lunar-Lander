@@ -70,7 +70,7 @@ struct GameState
 {
     Entity* player;
     Entity* platforms;
-    Entity* goal;
+    Entity* win_plat;
     Entity* win_msg;
     Entity* lose_msg;
 };
@@ -208,11 +208,11 @@ void initialise()
         g_game_state.platforms[i].set_entity_type(TRAP_PLATFORM);
     }
 
-    g_game_state.goal = new Entity();
-    g_game_state.goal->m_texture_id = load_texture(WIN_PLATFORM_FILEPATH);
-    g_game_state.goal->set_position(glm::vec3(-1.0f, -3.5f, 0.0f));
-    g_game_state.goal->update(0.0f, NULL, 0);
-    g_game_state.goal->set_entity_type(GOAL_PLATFORM);
+    g_game_state.win_plat = new Entity();
+    g_game_state.win_plat->m_texture_id = load_texture(WIN_PLATFORM_FILEPATH);
+    g_game_state.win_plat->set_position(glm::vec3(-1.0f, -3.5f, 0.0f));
+    g_game_state.win_plat->update(0.0f, NULL, 0);
+    g_game_state.win_plat->set_entity_type(WIN_PLATFORM);
 
     g_game_state.win_msg = new Entity();
     g_game_state.win_msg->m_texture_id = load_texture(WIN_MSG_FILEPATH);
@@ -306,9 +306,9 @@ void update()
     {
         // Notice that we're using FIXED_TIMESTEP as our delta time
         g_game_state.player->update(FIXED_TIMESTEP, g_game_state.platforms, PLATFORM_COUNT);
-        if (g_game_state.player->check_collision(g_game_state.goal)) {
+        if (g_game_state.player->check_collision(g_game_state.win_plat)) {
             player_win = true;
-            //g_game_state.goal->activate();
+            //g_game_state.win_plat->activate();
 
         }
         for (int i = 0; i < PLATFORM_COUNT; i++) {
@@ -358,8 +358,8 @@ void render()
         }
     }
 
-    if (g_game_state.goal->is_active()) {
-        g_game_state.goal->render(&g_shader_program);
+    if (g_game_state.win_plat->is_active()) {
+        g_game_state.win_plat->render(&g_shader_program);
     }
    
     if (player_win) {

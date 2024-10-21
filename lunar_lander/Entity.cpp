@@ -200,7 +200,7 @@ void const Entity::check_collision_y(Entity* collidable_entities, int collidable
                 //collidable_entity->deactivate();
                 break;
             }
-            else if (collidable_entity->get_entity_type() == GOAL_PLATFORM) {
+            else if (collidable_entity->get_entity_type() == WIN_PLATFORM) {
                 collidable_entity->collided = false;
                 win = true;
                 //collidable_entity->deactivate();
