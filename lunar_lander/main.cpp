@@ -48,11 +48,11 @@ constexpr char V_SHADER_PATH[] = "shaders/vertex_textured.glsl",
 F_SHADER_PATH[] = "shaders/fragment_textured.glsl";
 
 constexpr float MILLISECONDS_IN_SECOND = 1000.0;
-constexpr char WITCH_FILEPATH[] = "witch.png",
-LOSE_PLATFORM_FILEPATH[] = "lava.jpg",
-WIN_PLATFORM_FILEPATH[] = "rocky.png",
-WIN_MSG_FILEPATH[] = "mission_passed.png",
-LOSE_MSG_FILEPATH[] = "mission_failed.png";
+constexpr char WITCH_FILEPATH[] = "assets/witch.png",
+LOSE_PLATFORM_FILEPATH[] = "assets/lava.jpg",
+WIN_PLATFORM_FILEPATH[] = "assets/rocky.png",
+WIN_MSG_FILEPATH[] = "assets/mission_passed.png",
+LOSE_MSG_FILEPATH[] = "assets/mission_failed.png";
 
 constexpr glm::vec3 KITA_INIT_SCALE = glm::vec3(2.0f, 3.8621f, 0.0f);
 
