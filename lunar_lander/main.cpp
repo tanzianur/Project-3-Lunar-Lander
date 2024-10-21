@@ -54,7 +54,6 @@ WIN_PLATFORM_FILEPATH[] = "assets/rocky.png",
 WIN_MSG_FILEPATH[] = "assets/mission_passed.png",
 LOSE_MSG_FILEPATH[] = "assets/mission_failed.png";
 
-constexpr glm::vec3 KITA_INIT_SCALE = glm::vec3(2.0f, 3.8621f, 0.0f);
 
 constexpr GLint NUMBER_OF_TEXTURES = 1,
 LEVEL_OF_DETAIL = 0,

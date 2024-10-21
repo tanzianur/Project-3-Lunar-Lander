@@ -13,9 +13,6 @@ class Entity
 private:
     // Removed individual animation arrays
     bool m_is_active = true;
-    bool m_left_accel = false;
-    bool m_right_accel = false;
-    bool m_up_accel = false;
 
     EntityType m_entity_type;
 
@@ -90,9 +87,9 @@ public:
     void face_up() { m_animation_indices = m_walking[UP]; }
     void face_down() { m_animation_indices = m_walking[DOWN]; }
 
-    void move_left() { m_movement.x = -1.0f; face_left(); };
-    void move_right() { m_movement.x = 1.0f;  face_right(); };
-    void move_up() { m_movement.y = 1.0f;  face_up(); };
+    void move_left() { m_movement.x = -0.5f; face_left(); };
+    void move_right() { m_movement.x = 0.5f;  face_right(); };
+    void move_up() { m_movement.y = 0.5f;  face_up(); };
     void move_down() { m_movement.y = -1.0f; face_down(); };
 
     // ————— GETTERS ————— //
